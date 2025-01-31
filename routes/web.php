@@ -12,5 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('groups.index');
 });
+
+
+Route::resource('groups', GroupController::class);
+Route::get('groups/{group}/students', 'GroupController@showStudents')->name('groups.showStudents');
+
+Route::resource('students', StudentController::class);
+
