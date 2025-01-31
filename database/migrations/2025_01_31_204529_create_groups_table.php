@@ -15,6 +15,9 @@ class CreateGroupsTable extends Migration
     {
         Schema::create('groups', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('semester');
+            $table->string('group');
+            $table->string('shift');
             $table->timestamps();
         });
     }
